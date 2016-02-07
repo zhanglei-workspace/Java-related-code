@@ -1,0 +1,11 @@
+     # target #
+.metadata
+.settings
+.classpath
+.project
+.gitattributes
+*.class
+
+
+# Generated files #
+bin/
