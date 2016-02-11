@@ -6,14 +6,13 @@ public class B003RootDir
 {
 
 	/**
+	 * 根目录信息
 	 * @param args
 	 */
 	public static void main(String[] args)
 	{
 		
 		rootNUm();
-		
-//		infoRoot();
 		
 	}
 	
@@ -32,28 +31,5 @@ public class B003RootDir
 			
 		}
 	}
-
-/*	*//**
-	 * 
-	 *//*
-	private static void infoRoot()
-	{
-		File[] num = File.listRoots();
-		
-		int max = 0;
-		String maxName = null;
-		for (File file : num)
-		{
-			int len = Integer.parse); file.getUsableSpace().
-			if (max<len)
-			{
-				maxName = file.getName();
-			}
-		}
-		System.out.println("max:"+maxName);
-		
-	}
-	*/
-	
 
 }
