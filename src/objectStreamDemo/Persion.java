@@ -12,9 +12,13 @@ public class Persion implements Serializable //必须实现此接口
 {
 
 	/**
-	 * 
+	 * 序列号，可自定义数值
 	 */
 	private static final long serialVersionUID = 123456L;
+	
+//被关键字 transient 与 static 修饰的的字段不能被序列化到硬盘上
+//	private transient String name;
+//	private static int age;
 	private String name;
 	private int age;
 	
