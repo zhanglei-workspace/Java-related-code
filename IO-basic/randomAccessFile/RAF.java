@@ -7,7 +7,7 @@ public class RAF
 {
 
 	/**
-	 * RandomAccessFile
+	 * RandomAccessFile（随机读写文件）
 	 * @param args
 	 * @throws IOException 
 	 */
@@ -24,8 +24,9 @@ public class RAF
 		
 		//通过seek设置指针位置
 //		raf.seek(1*2);//随机读取，只需指定指针的位置即可
-//		
+		
 		int age = raf.readInt();
+		
 		byte[] buf = new byte[20];
 		raf.read(buf);
 		
