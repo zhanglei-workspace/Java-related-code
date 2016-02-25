@@ -1,0 +1,30 @@
+1、Tomcat默认Session对象的超时时间为30分钟；
+2、可以通过session.setMaxInterval()函数设置超时的秒数；
+3、在web.xml配置中设置：
+<session-config>
+<session-timeout>
+10
+</session-timeout>
+</session-config>//单位分钟
+
+
+【session的生命周期】 活动：
+	
+	*只要当前会话页面没有全部关闭，重新打开新的浏览器窗口访问同意项目资源时属于同一次会话。
+	
+	注意：
+		新建会话后，原有的会话不会消失（未被提前销毁时），这个旧的sessionId仍然存在于服务器端，只不过是没有客户端会携带它然后交予服务器端校验。
+	
+	session销毁的三种方式：
+		1:调用session.invalidate()方法
+		2：session过期（超时）。tomcat默认session超时时间为30分钟
+		3;服务器重新启动
+	设置session超时的两种方式：
+		1：session.setMaxInactiveInterval(时间);//单位是秒
+		
+		2:在web.xml配置
+			<session-config>
+				<session-timeout>
+				10
+				<session-timeout>
+			<session-config> //单位是分钟，上述是10分钟

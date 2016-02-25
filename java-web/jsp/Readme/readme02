@@ -1,0 +1,47 @@
+   第三章   jsp的内置（隐式）对象
+ 1. 什么是jsp的内置对象
+    tomcat服务器将jsp页面转译为servlet类时自动创建好的对象，开发人员可以在jsp页面中直接使用，不需要再创建（new）的对象。
+    
+    用法：
+     在java代码段中使用：<% .....%>
+    
+    
+ 2. jsp页面的九大内置对象
+    (1)和输入输出相关的对象： request、response、out
+    (2)和作用域传值相关对象： pageContext、session、application
+    (3)和servlet相关的： page、config
+    (4)和异常相关的：exception
+ 
+ 【1】request对象：功能最强大
+       类型： HttpServletRequest
+       常用方法：
+       1》request.getParameter方法
+           作用：根据参数名获取参数值
+           例如：tomcat服务器将表单元素的值自动封装到提交到的页面的request对象中。
+             (1)获取单值的表单元素的值。
+             (2)获取param动作传递的参数
+        2》String[] xxx=request.getParameterValues("参数名");
+           功能： 获取的多值的表单元素提交的内容
+        3》 request.getRequestDispatcher("转向到页面url").forward(request,response);
+           功能：实现页面的请求转发
+        4》request.setAttribute("参数名",参数值 );   //向request对象设置参数
+            request.getAttribute("参数名");
+           功能：开发工程师根据业务需要，实现页面之间传值
+           【注意】getAttribute方法返回Object类型，需要强制转换
+        5》request.setCharacterEncoding("UTF-8")；
+          功能：tomcat封装表单数据默认使用ISO-8859-1编码，对中文支持不好，使用request设置编码
+          【特点】只对表单提交方式：post方式起作用
+          
+        
+        
+ 【中文乱码问题解决】
+    方法一：表达post提交，使用request设置编码为UTF-8
+    方法二：针对get或post提交方式，对表单提交的数据按照UTF-8重新编码
+              userName=new String(userName.getBytes("ISO-8859-1"),"UTF-8");
+          
+       
+    
+ 
+ 
+    
+    
