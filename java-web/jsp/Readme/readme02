@@ -35,10 +35,14 @@
         
         
  【中文乱码问题解决】
-    方法一：表达post提交，使用request设置编码为UTF-8
+    方法一：表达post提交，使用request设置编码为UTF-8   request.setCharacterEncoding("UTF-8");
+    
     方法二：针对get或post提交方式，对表单提交的数据按照UTF-8重新编码
               userName=new String(userName.getBytes("ISO-8859-1"),"UTF-8");
-          
+              
+  	方法三：URL传参数乱码问题
+				2.在server.xml中的Connector标签下配置加上 URIEncoding="utf-8"
+	
        
     
  
