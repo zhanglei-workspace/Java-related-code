@@ -1,0 +1,20 @@
+
+解决Cookie无法保存中文字符串的问题
+
+	1.java.net包下的URLEncoder类来进行编码
+		public static encode(String string, String enco);
+	2.URLDecoder类进行解码
+		URLDecoder.decode(String string, String enco);
+	3.查找Cookie时,是按照键值对进行查找的
+	-----------------------------------
+	
+	
+	使用URLEncoder（在java.net包下）解决无法在Cookie当中保存中文字符串问题：
+			contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"
+			request.setCharacterEncoding("UTF-8");//必须先设置解决次乱码问题
+	
+		String username = URLEncoder.encode(request.getParameter("username"),"UTF-8");//取值并编码，URLencoder编码解决cookie中
+		String password = URLEncoder.encode(request.getParameter("password"),"UTF-8");//				无法保存文字符串的问题
+		
+		//取值并解码
+		name = URLDecoder.decode(c.getValue(),"UTF-8"); //判断得到cookie中有用户名将其赋值给name
