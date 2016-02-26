@@ -1,0 +1,28 @@
+
+【JavaBean】
+
+	JavaBean是符合某种特定规范的Java类，使用Javabeans的好处是解决代码重复编写，减少代码冗余，功能区分明确。
+	Javabean既可以封装数据同时也可以封装业务逻辑
+		四个特点：
+					1.这个类为公有类；
+					2.它的属性为私有；
+					3.具有不含参数的公有构造函数；
+					4.访问私有属性都需通过setter和getter函数
+					
+	<jsp:setProperty>
+		作用是给已经实例化的javabean对象的属性赋值，一共有四种形式。
+			代码例子：
+			1.<jsp:setProperty name="javaBean实例名" property="*"/>根据表单自动匹配属性
+			2.<jsp:setProperty name="javaBean实例名 property="javaBean属性名"/>根据表单自动匹配相应的属性（部分匹配）
+			3.<jsp:setProperty name="javaBean实例名 property="javaBean属性名" value="BeanValue" />自己设置属性值，与表单无关
+			4.<jsp:setProperty name="JavaBean实例名" property="propertyName" param="表单传递的参数"/>通过url传参数给属性赋值（表单中action属性url传递参数值：action=“volidate.jsp?myname=lyons”）
+
+			
+	JavaBean的四个作用域范围 - scope
+
+	scope="page" 仅在当前页面有效（重定向或者服务器内部转发均后均无效）
+	scope="request" 可用request.getAttribute()方法获得javabean对象。在当前请求及服务器转发后的请求中有效。
+	scope="session" 可用session.getAttribute()方法获得javabean对象。在当前会话session有效期间，该对象均有效。
+	scope="application" 可用application.getAttribute()方法获得javabean对象。application可以作用于整个Web应用
+
+	-- 作用域范围从小到大依次为：page < request < session < application.

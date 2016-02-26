@@ -6,10 +6,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<!--  	乱码问题解决方案
-				1.request.setCharacterEncoding("UTF-8")
-				2.在server.xml中的Connector标签下配置加上 URIEncoding="utf-8"（URL传参数乱码问题） 
-		--> 
 		<% request.setCharacterEncoding("UTF-8"); %> 
 		<% 
 			String name = request.getParameter("name");

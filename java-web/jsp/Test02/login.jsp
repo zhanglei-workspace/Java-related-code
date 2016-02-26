@@ -6,7 +6,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<!-- 普通登录验证 -->
+		<!-- 业务分层实现用户登录 -->
 		<div id="" align="center">
 			<div>
 				<a href="#"> <img src="image/logo.png" alt="logo"> </a>
@@ -16,9 +16,9 @@
 				<form action="validate.jsp" method="post">
 					
 						<label> username：</label>
-							<input name="name" value="">
+							<input name="username">
 						<label> password：</label>
-							<input type="password" name="pass" value="">
+							<input type="password" name="password">
 						
 						<input type="submit" value="submit">
 				</form>
