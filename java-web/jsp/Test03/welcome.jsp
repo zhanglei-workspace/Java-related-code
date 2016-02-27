@@ -11,4 +11,12 @@
 	%>
 	<div align="center">
 		<font color="red"><%= user %></font>,Welcome to here.
+		<hr>
+	
+		<!-- include指令将date.jsp页面包含进来 -->
+			<%@ include file="date.jsp" %>|
+		
+		<!-- include动作将date.jsp页面包含进来 -->
+			<jsp:include page="date.jsp" flush="true"></jsp:include>
+	
 	</div>

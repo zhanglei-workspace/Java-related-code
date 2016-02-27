@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@page import="java.net.*"%>
+<%@page import="java.net.URLEncoder"%>
 
 <!-- 处理cookie信息。 -->
 <% 
@@ -9,10 +9,9 @@
 	if(cookie!=null && cookie.length>0)//用户选择了免登陆按钮
 	{
 		//将用户名和密码保存在cookie对象里
-		
 		String username = URLEncoder.encode(request.getParameter("username"),"UTF-8");//取值并编码，URLencoder编码解决cookie中
-		String password = URLEncoder.encode(request.getParameter("password"),"UTF-8");//				无法保存文字符串的问题
-		Cookie nameCookie = new Cookie("username",username); //设置cookie键值对，记住键，方便登录时取值
+		String password = URLEncoder.encode(request.getParameter("password"),"UTF-8");//				无法保存中文字符串的问题
+		Cookie nameCookie = new Cookie("username",username); //设置cookie键值对（双引号内自己起名），记住键，方便登录时取值
 		Cookie passCookie = new Cookie("password",password);
 		
 		nameCookie.setMaxAge(86400);//设置生存期限，单位：秒
@@ -23,7 +22,7 @@
 	}else
 		{
 			Cookie[] cookies = request.getCookies();
-			if(cookies!=null && cookies.length>0)//以前保存有cookie
+			if(cookies!=null && cookies.length>0)//刚刚提交的cookie有值
 			{
 				for(Cookie c:cookies)
 				{

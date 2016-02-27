@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@page import="java.net.*"%>
+<%@page import="java.net.URLDecoder"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,7 +21,7 @@
 			{
 				for(Cookie c:cookies)
 				{
-					if("username".equals(c.getName())) //name是之前存储cookie时设置的键
+					if("username".equals(c.getName())) //username是之前存储cookie时设置的键
 					{
 						//取值并解码
 						name = URLDecoder.decode(c.getValue(),"UTF-8"); //判断得到cookie中有用户名将其赋值给name

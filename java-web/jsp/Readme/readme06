@@ -1,0 +1,16 @@
+include指令与include动作比较(经典问题)
+
+	*语法格式: include指令 <%@ include file="..." %> include动作 <jsp:include page="..." />
+	*发生作用的时间: include指令在页面转换期间，include动作在请求期间
+	*包含的内容: include指令包含文件实际内容(在编译文件里主页面和包含页面是组合成一个的类)，include动作包含页面的输出(在编译文件里主页面和包含页面是两个独立的类)
+	*转换成的Servlet: include指令主页面和包含页面转换为一个Servlet，include动作主页面和包含页面转换为独立的Servlet
+	*编译时间: include指令较慢（因为资源必须被解析）， include动作较快
+	*执行时间: include指令较快， include动作较慢（因每次资源必须被解析）
+	
+四中跳转方式：
+		//重定向
+				<% response.sendRedirect("login_seccess.jsp"); %>
+		//转发
+				<jsp:forward page="login_fail.jsp"/> 
+				<% pageContext.forward("login_fail.jsp");%> 
+				<% request.getRequestDispatcher("login_fail.jsp").forward(request,response);%> 
