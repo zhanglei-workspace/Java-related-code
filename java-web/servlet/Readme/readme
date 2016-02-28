@@ -1,0 +1,20 @@
+编写Servlet的三个步骤：
+		1、继承HttpServlet
+		2、重新doGet()或者重写doPost()方法
+		3、在web.xml中注册Servlet
+		
+		  <servlet>
+  				<servlet-name>hello</servlet-name>   //自己起名
+  				<servlet-class>servlet.servlet</servlet-class>  //包名.类
+  		</servlet>
+
+ 		<servlet-mapping>
+			  	<servlet-name>hello</servlet-name>  //与上述名字一致
+			  	<url-pattern>/servlet/servlet</url-pattern>//请求URL地址
+  		</servlet-mapping>
+  		
+  		
+  Servlet 生命周期：
+		1,初始化阶段，调用init（）方法；
+		2，响应客户端请求阶段，调用service（）方法，由service（）方法根据提交方式选择执行doGet()或者doPost()方法；
+		3，终止阶段，调用destory()方法。
