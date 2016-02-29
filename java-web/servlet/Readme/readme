@@ -18,3 +18,18 @@
 		1,初始化阶段，调用init（）方法；
 		2，响应客户端请求阶段，调用service（）方法，由service（）方法根据提交方式选择执行doGet()或者doPost()方法；
 		3，终止阶段，调用destory()方法。
+		
+Servlet的装载三种情况：
+		1、自动装载：某些Servlet如果需要在Servlet容器启动时就加载，需要在web.xml下它的<Servlet>标签里中，添加优先级代码：
+		<Servlet>
+			<load-on-startup>1<load-on-startup> //数字越小表示该servlet的执行优先级越高
+		</Servlet>
+		2、Servlet容器启动后，客户首次向某个Servlet发送请求时，Tomcat容器会加载它
+		3、当Servlet类文件被更新后，也会重新自动加载
+		
+			Pro tips:
+				Servlet是长期驻留在内存里的。某个Servlet一旦被加载，就会长期存在于服务器的内存里，直到服务器关闭.
+				Servlet被装载后，Servlet容器创建一个Servlet实例并且调用Servlet的init()方法进行初始化。
+				在Servlet的整个生命周期内，init()方法只被调用一次
+			
+			

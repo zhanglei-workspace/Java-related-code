@@ -1,0 +1,11 @@
+	Servlet与JSP九大内置对象的对应关系
+
+			out => response.getWriter （out:是JspWriter类型,response.getWriter:是PrintWriter类型）
+			requeset => service方法中的req参数
+			response => service方法中的resp参数
+			session => req.getSession()函数
+			application =>getServletContext()函数
+			exception=> Throwable
+			page => this
+			pageContext=>PageContext
+			Config =>getServletConfig函数
