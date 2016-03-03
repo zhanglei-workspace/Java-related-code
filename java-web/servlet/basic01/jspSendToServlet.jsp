@@ -20,13 +20,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
   </head>
   <body>
-  
-  		<h1><b>手工输出servlet</b></h1><br>
-   		<a href="servlet/servlet">get 方式请求servlet</a><br><br>
-   		
-   		<form action="servlet/servlet" method="post">
-   			<input type="submit" value="post请求"/>
-
-   		</form>
+  		<% 
+  			session.setAttribute("lyons","20");
+  			request.setAttribute("lyons","20");
+  		%>
+  		
+  		<a href="JspServlet?lyons=20">点击向sevlet传值</a>
+  		
+  		<form action="JspServlet?lyons=20" name="form" method="post" >
+	  		<input name="" type="text"/>
+	  		<input type="submit" value="submit"/>
+  		</form>
   </body>
 </html>

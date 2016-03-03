@@ -1,0 +1,78 @@
+【Servlet与JSP间的传值问题】
+
+	Servlet与JSP 之间的传值有两种情况：JSP -> Servlet， Servlet -> JSP。
+	
+	通过对象 request和 session (不考虑 application)完成传值。
+	
+	一、JSP -> servlet
+	
+	JSP页面有3种方法向 servlet传值： form表单、URL
+	
+		<% 
+  			session.setAttribute("lyons","20");
+  			request.setAttribute("lyons","20");
+  		%>
+  		
+  		<a href="JspServlet?lyons=20">点击向sevlet传值</a>
+  		
+  		<form action="JspServlet?lyons=20" name="form" method="post" >
+	  		<input name="" type="text"/>
+	  		<input type="submit" value="submit"/>
+  		</form>
+	
+	1、对于该JSP页面 form表单的内容，如 <input>标签，在 servlet可用 request.getParameter("username");获取。
+	
+	2、URL：比如这里的 <a>标签的 href属性与 <form>标签的 action属性的值 "JspServlet?action=toServlet"，
+		在 servlet同样用 request.getParameter("action")获取；
+		所要注意的是这里的 url 要和 servlet在web.xml里的 <url-pattern>标签的路径所对应。
+	
+	3、java片段代码，servlet只能接到 session.setAttribute("testSession","Hello session")的内容，而接不到 request的内容。
+		在 servlet里用 request.getSession().getAttribute("testSession")获取 session内容。
+
+二、Servlet
+	
+	1、关于 servlet，首先要提到它在 web.xml里的注册内容，
+	
+	假如 project name 是 jsp2servlet，则该 project根目录的 Context是 /jsp2servlet，在地址栏里显示是 http://localhost:8080/jsp2servlet/；
+	
+	在 project 根目录下有 admin目录，对应的 Context是/admin/jsp2servlet，在地址栏里显示是 http://localhost:8080/jsp2servlet/admin，
+	
+	在这两个目录下的 jsp 都想转到 com.demo.JspServletDemo类做处理，这时的 url需要在 web.xml注册两次。
+	
+	1)在 http://localhost:8080/jsp2servlet/ 目录下的 jsp 页面 JspServlet1，url应写为 "JspServlet"
+	
+	2)在 http://localhost:8080/jsp2servlet/admin/ 目录下的 jsp 页面访问 JspServlet2，url应写为 "admin/JspServlet"
+	
+	2、在 servlet直接用 request对象，得到发送来的请求内容；用 request.getSession()，得到 session对象，从而得到会话内容。
+	这里的 request.getSession()的参数为 boolean 类型，该方法意思可理解为：
+	
+		session可以认为是每一个IE进程对应一个会话(新开一个IE进程就可以对应两个会话的)，
+		
+		getSession都是返回当前用户的会话对象，参数的区别在于：
+		
+			参数为true (默认)，则如果“当前用户的会话对象”为空(第一次访问时)则创建一个新的会话对象返回；
+			
+			参数为false，则如果“当前用户的会话对象”为空，则返回 null (即不自动创建会话对象)。
+	
+	利用这个方法可以判断 session是否过期，如下：
+	
+	  		if(request.getSession(false)==null)
+	  		{
+	  			System.out.println("Session has been invalidated");
+	  		}else
+	  			{
+	  				System.out.println("Session is active");
+	  			}
+  		
+三、Servlet -> JSP
+
+从 servlet转到 jsp不外乎两种方法，重定向 和 url转发
+
+1、重定向 ( Redirect)：是路径的跳转，内容和 url都改变。
+	不允许带 request参数( session参数可以)，即不允许在 servlet里给 request对象使用setAttribute方法传给下一页面。
+	在 servlet里使用 response.sendRedirect(url) 方法。注意这里的 url前不带斜线 /，
+		如 response.sendRedirect(”test.jsp“)
+
+2、url转发 ( Forward)：是页面的跳转，页面内容发生改变，url不变。可以带 request和 session参数。
+	在 servlet里使用 getServletConfig().getServletContext().getRequestDispatcher(url).forward(request, response)。
+	而这里的 url前需要带斜线 /，如getServletConfig().getServletContext().getRequestDispatcher(”/test.jsp“).forward(request, response)
