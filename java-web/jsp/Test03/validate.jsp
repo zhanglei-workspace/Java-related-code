@@ -21,8 +21,9 @@
 		response.addCookie(passCookie);
 	}else
 		{
+			//用户未选择记住密码，删除浏览器中可能存在的cookie
 			Cookie[] cookies = request.getCookies();
-			if(cookies!=null && cookies.length>0)//刚刚提交的cookie有值
+			if(cookies!=null && cookies.length>0)
 			{
 				for(Cookie c:cookies)
 				{

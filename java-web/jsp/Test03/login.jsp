@@ -26,7 +26,8 @@
 						//取值并解码
 						name = URLDecoder.decode(c.getValue(),"UTF-8"); //判断得到cookie中有用户名将其赋值给name
 					}
-					if("password".equals(c.getName()))
+					
+					if("password".equal(c.getName()))
 					{
 						pass = URLDecoder.decode(c.getValue(),"UTF-8");//判断得到cookie中有密码将其赋值给pass
 					}
