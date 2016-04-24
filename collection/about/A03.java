@@ -35,7 +35,7 @@ public class A03
 		System.out.println("Test2------   "+date4);
 		
 		//自定义格式
-		dateFormat5 = new SimpleDateFormat("YYYY/MM/dd");
+		DateFormat dateFormat5 = new SimpleDateFormat("YYYY/MM/dd");
 		String date5 = dateFormat5.format(date);
 		System.out.println("Test2------   "+date5);
 	}
