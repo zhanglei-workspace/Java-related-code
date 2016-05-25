@@ -69,7 +69,7 @@ public class MergeText
 		
 		Enumeration<FileInputStream> en = Collections.enumeration(al);
 		
-		SequenceInputStream sis = new SequenceInputStream(en);
+		SequenceInputStream sis = new SequenceInputStream(en);//合并流，将多个输入流合并成一个SequenceInputStream流对象
 		
 		FileOutputStream fos = new FileOutputStream("K:\\11\\4.txt");
 

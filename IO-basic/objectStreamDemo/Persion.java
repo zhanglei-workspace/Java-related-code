@@ -17,6 +17,7 @@ public class Persion implements Serializable //必须实现此接口
 	private static final long serialVersionUID = 123456L;
 	
 //被关键字 transient 与 static 修饰的的字段不能被序列化到硬盘上
+//将不需要序列化的属性前添加关键字transient，序列化对象的时候，这个属性就不会序列化到指定的目的地中
 //	private transient String name;
 //	private static int age;
 	private String name;

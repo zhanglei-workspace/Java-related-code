@@ -37,7 +37,7 @@ public class A00FileByte
 	public static void demo_write() throws IOException
 	{
 		//创建字节输出流,不需要临时缓冲，直接写入目的地中
-		FileOutputStream fos = new FileOutputStream("K:\\bytefile.txt",true);
+		FileOutputStream fos = new FileOutputStream("K:\\bytefile.txt",true);//true：将新文件追加到旧文件末尾
 		
 		fos.write("helloworldbyte".getBytes());
 		

@@ -22,7 +22,7 @@ public class B001file
 		File f  = new File("K:\\");
 		File f3 = new File("a.txt");
 		
-		File f4 = new File("C:",File.separator+"a.txt"); //File.separator：与系统有关的路径分隔符。 因为不同系统，内部的分隔符是不一样的  \\  ;
+		File f4 = new File("C:",File.separator+"a.txt"); //Fi系统，内部的分隔符是不一样的  \\  ;
 		System.out.println(f4);
 		
 	}

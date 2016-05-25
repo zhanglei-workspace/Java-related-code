@@ -15,7 +15,7 @@ public class BASdame
 	 */
 	public static void main(String[] args)
 	{
-		ByteArrayInputStream bais = new ByteArrayInputStream("abcde".getBytes());
+		ByteArrayInputStream bais = new ByteArrayInputStream("abcde".getBytes());//getBytes():将一个字符串转化为字节数组
 
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		

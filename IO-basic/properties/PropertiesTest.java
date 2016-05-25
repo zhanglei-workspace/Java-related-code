@@ -79,6 +79,7 @@ public class PropertiesTest
 		
 		prop.store(fos, "name+age");//第二个参数为描述信息
 		
+		prop.clone();
 		fos.close();
 	}
 }
