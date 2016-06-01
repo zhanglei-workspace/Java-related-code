@@ -32,7 +32,7 @@ public class Send implements Runnable
 					//使用DatagramPacket 将数据封装到该对象包中
 					byte[] buf = line.getBytes();
 					
-					DatagramPacket dp = new DatagramPacket(buf,buf.length,InetAddress.getByName("192.168.31.190"),20002);
+					DatagramPacket dp = new DatagramPacket(buf,buf.length,InetAddress.getByName("169.254.191.49"),20002);
 					//      包的长度							发送到目的主机 	目标主机端口号 
 					
 					//3.使用UDP的socket服务的send方法

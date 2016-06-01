@@ -12,7 +12,7 @@ public class Server
 {
 
 	/**
-	 * TCP 客户端
+	 * TCP 服务端
 	 * @param args
 	 * @throws IOException 
 	 */

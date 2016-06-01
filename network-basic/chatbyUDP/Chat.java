@@ -19,6 +19,7 @@ public class Chat
 		
 		new Thread(new Send(send)).start(); 		//开启发送线程
 		new Thread(new Receive(receive)).start();	//开启接收线程
+		
 
 	}
 
