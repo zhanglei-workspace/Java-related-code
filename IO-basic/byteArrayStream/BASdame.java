@@ -7,15 +7,21 @@ public class BASdame
 {
 
 	/**
-	 * ²Ù×÷×Ö½ÚÊı×é byteArrayStream
-	 * ÀàËÆµÄÓĞ£º
-	 *       ²Ù×÷×Ö·ûÊı×é CharArrayReader CharArrayWrite
-	 *       ²Ù×÷×Ö·û´®   StringReader StringWrite
+	 * SVN: '0x00400006: Validate Repository Location' operation finished with error: Selected SVN connector library is not available or cannot be loaded.
+If you selected native JavaHL connector, please check if binaries are available or install and select pure Java Subversion connector from the plug-in connectors update site.
+If connectors already installed then you can change the selected one at: Window->Preferences->Team->SVN->SVN Connector.
+Selected SVN connector library is not available or cannot be loaded.
+If you selected native JavaHL connector, please check if binaries are available or install and select pure Java Subversion connector from the plug-in connectors update site.
+If connectors already installed then you can change the selected one at: Window->Preferences->Team->SVN->SVN Connector.
+	 * æ“ä½œå­—èŠ‚æ•°ç»„ byteArrayStream
+	 * ç±»ä¼¼çš„æœ‰ï¼š
+	 *       æ“ä½œå­—ç¬¦æ•°ç»„ CharArrayReader CharArrayWrite
+	 *       æ“ä½œå­—ç¬¦ä¸²   StringReader StringWrite
 	 * @param args
 	 */
 	public static void main(String[] args)
 	{
-		ByteArrayInputStream bais = new ByteArrayInputStream("abcde".getBytes());//getBytes():½«Ò»¸ö×Ö·û´®×ª»¯Îª×Ö½ÚÊı×é
+		ByteArrayInputStream bais = new ByteArrayInputStream("abcde".getBytes());//getBytes():å°†ä¸€ä¸ªå­—ç¬¦ä¸²è½¬åŒ–ä¸ºå­—èŠ‚æ•°ç»„
 
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		
