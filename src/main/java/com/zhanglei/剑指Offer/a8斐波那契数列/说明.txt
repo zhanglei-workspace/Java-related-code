@@ -1,0 +1,15 @@
+https://www.cnblogs.com/edisonchou/p/4752052.html
+
+题目：写一个函数，输入n，求斐波那契（Fibonacci）数列的第n项。斐波那契数列的定义如下：
+斐波拉契数列的定义：
+
+F0=0,F1=1F0=0,F1=1；
+Fn=Fn−1+Fn−2(n≥2)Fn=Fn−1+Fn−2(n≥2)。
+用f1, f2分别表示 Fi−2Fi−2, Fi−1Fi−1，用ret表示FiFi，每次令ret = f1 + f2,ret就表示FiFi 得到FnFn，然后把f1, f2分别更新为Fi−1Fi−1, FiFi, 依次类推，ret的值就是最终FnFn的值。
+
+int型整数只能保存F0→F46F0→F46，下面是这个区间的斐波拉契数列的值：
+
+
+思路：
+递归方法计算量会随着n的增大而急剧增大。时间复杂度是以n的指数的方式递增的。
+想办法避免重复计算
