@@ -6,14 +6,10 @@
 package a16合并两个排序的链表; //O（1）
 
 
-import java.util.List;
+import a0utiles.ListNode;
 
 public class A16MergeList {
 
-    public static class ListNode {
-        int value;
-        ListNode next;
-    }
 
     /**
      * 输入两个递增排序的链表，合并这两个链表并使新链表中的结点仍然是按照递增排序的

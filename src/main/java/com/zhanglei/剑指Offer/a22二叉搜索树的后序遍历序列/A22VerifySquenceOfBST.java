@@ -1,16 +1,12 @@
+/*Copyright ©  2019 Lyons. All rights reserved. */
+
+package a22二叉搜索树的后序遍历序列;
+
 /**
  * @Description: TODO
  * @Auther: zhanglei
  * @Date: 2019/6/12 18:59
  */
-package a22二叉搜索树的后序遍历序列;
-
-
-import a0utiles.BinaryTreeNode;
-
-import java.util.Queue;
-import java.util.concurrent.LinkedBlockingQueue;
-
 public class A22VerifySquenceOfBST {
 
 

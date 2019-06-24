@@ -1,16 +1,9 @@
 package a17树的子结构; //O（1）
 
 
-public class A17HasSubtree {
+import a0utiles.BinaryTreeNode;
 
-    /**
-     * 二叉树节点类
-     */
-    public static class BinaryTreeNode {
-        int value;
-        BinaryTreeNode left;
-        BinaryTreeNode right;
-    }
+public class A17HasSubtree {
 
     /**
      * 输入两棵二叉树A和B，判断B是不是A的子结构。

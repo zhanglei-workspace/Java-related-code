@@ -6,16 +6,10 @@
 package a18二叉树的镜像; //O（1）
 
 
+import a0utiles.BinaryTreeNode;
+
 public class A18SubtreeMirror {
 
-    /**
-     * 二叉树节点类
-     */
-    public static class BinaryTreeNode {
-        int value;
-        BinaryTreeNode left;
-        BinaryTreeNode right;
-    }
 
     /**
      * 请完成一个函数，输入…个二叉树，该函数输出它的镜像
