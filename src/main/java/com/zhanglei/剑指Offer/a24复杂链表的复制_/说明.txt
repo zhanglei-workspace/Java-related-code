@@ -1,0 +1,9 @@
+https://www.cnblogs.com/edisonchou/p/4790090.html
+
+题目：请实现函数ComplexListNode Clone(ComplexListNode head)，复制一个复杂链表。
+在复杂链表中，每个结点除了有一个Next指针指向下一个结点外，还有一个Sibling指向链表中的任意结点或者NULL。
+
+第一步仍然是复制原始链表上的每个结点N创建N'，然后把这些创建出来的结点用Next链接起来。
+同时我们把<N,N'>的配对信息放到一个哈希表中。
+
+第二步还是设置复制链表上每个结点的m_pSibling。由于有了哈希表，我们可以用O(1)的时间根据S找到S'。
