@@ -11,6 +11,7 @@ package sort.test;
 public class Test {
 
     public static final int N = 10000;
+    public static  int rangeR = 100000;
     public static String PACKET_NAME = "sort.";
     public static String PACKET = null;
 
@@ -21,13 +22,22 @@ public class Test {
         /**
          * Ωªªª≤‚ ‘
          */
+
             PACKET = PACKET_NAME + "exchange.";
             System.out.println("Ωªªª-√∞≈›≈≈–Ú≤‚ ‘");
-            arr = SortTestHelper.generateRandomArray(N, 0, 100000);
+            arr = SortTestHelper.generateRandomArray(N, 0, rangeR);
             SortTestHelper.testSort(PACKET+"BubbleSort", arr);
             System.out.println("Ωªªª-øÏÀŸ≈≈–Ú≤‚ ‘");arr = null;
-            arr = SortTestHelper.generateRandomArray(N, 0, 100000);
+            arr = SortTestHelper.generateRandomArray(N, 0, rangeR);
             SortTestHelper.testSort(PACKET+"QuickSort", arr);
+
+        /**
+         * ≤Â»Î≤‚ ‘
+         */
+            PACKET = PACKET_NAME + "insert.";
+            System.out.println("≤Â»Î-÷±Ω”≤Â»Î≈≈–Ú≤‚ ‘");
+            arr = SortTestHelper.generateRandomArray(N, 0, rangeR);
+            SortTestHelper.testSort(PACKET+"StraightInsertionSort", arr);
 
 
     }

@@ -31,7 +31,7 @@ public class QuickSort
      * @param start 起始位
      * @param end 结束位
      */
-    public static void sorting(int[] data, int start, int end)
+    private static void sorting(int[] data, int start, int end)
     {
         
         int i = start, j = end, key = data[start];//key代表选取的扫描比较词，同时data[start]成了一个坑

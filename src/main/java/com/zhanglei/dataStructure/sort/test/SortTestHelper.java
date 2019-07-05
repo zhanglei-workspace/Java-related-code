@@ -19,7 +19,7 @@ public class SortTestHelper {
         int[] arr = new int[n];
 
         for (int i = 0; i < n; i++)
-            arr[i] = new Integer((int)(Math.random() * (rangeR - rangeL + 1) + rangeL));
+            arr[i] = (int)(Math.random() * (rangeR - rangeL + 1) + rangeL);
         return arr;
     }
 

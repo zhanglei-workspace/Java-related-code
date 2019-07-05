@@ -20,7 +20,7 @@ public class BubbleSort
      * @param data 目标数组
      * @param length 结束位
      */
-    public static void sorting(int[] data, int length)
+    private static void sorting(int[] data, int length)
     {
         boolean flag = true;
         for (int i = 0; i < length-1 && flag; i++)//次数
