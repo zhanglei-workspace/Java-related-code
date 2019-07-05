@@ -2,8 +2,10 @@ package sort.test;
 
 import java.lang.reflect.Method;
 import java.lang.Class;
-import java.util.Random;
 
+/**
+ * 测试帮助类
+ */
 public class SortTestHelper {
 
     // SortTestHelper不允许产生任何实例
