@@ -6,7 +6,7 @@ import java.lang.Class;
 /**
  * 测试帮助类
  */
-public class SortTestHelper {
+public class SortTestHelper{
 
     // SortTestHelper不允许产生任何实例
     private SortTestHelper(){}
@@ -20,6 +20,7 @@ public class SortTestHelper {
 
         for (int i = 0; i < n; i++)
             arr[i] = (int)(Math.random() * (rangeR - rangeL + 1) + rangeL);
+        System.out.println("数量级："+n);
         return arr;
     }
 
